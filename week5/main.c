@@ -10,7 +10,7 @@ int n;
 int front=0;
 int rear=0;
 void Enqueue(st s[], int *rear, int arraySize,char a[], char b[], char c[]) {
-    if(rear == arraySize)
+    if(*rear == arraySize)
             printf("Hang cho da day\n");
     else{
          strcpy(s[*rear].name,a);
@@ -20,7 +20,7 @@ void Enqueue(st s[], int *rear, int arraySize,char a[], char b[], char c[]) {
     }
 }
 void Dequeue(st s[], int *front, int rear) {
-    if(front == rear)
+    if(*front == rear)
         printf("Hang cho da can\n");
     else {
         s[*front].name[0]='\0';
@@ -39,6 +39,7 @@ int main(){
 
     int dem1=0,dem2=0,dem3=0;
     FILE *f=fopen("ds.txt","r+");
+    FILE *gg=fopen("daura.txt","r+");
     while(fscanf(f,"%c",&x)!=EOF){
         y[dem1]=x;
         dem1++;
@@ -55,19 +56,20 @@ int main(){
         if(dem2%3==2){
             fi[dem2/3].email[dem3]=x;
         }
+        dem3++;
     }
     y[dem1]='\0';
-
-
+    printf("%s",y);
     int size=(dem2)/3;
-    for(int i=0;i<size;i++){
+    for(int i=0;i<3;i++){
         Enqueue(s,&rear,size,fi[i].name,fi[i].sdt,fi[i].email);
     }
-    for(int i=front;i<rear;i++){
-        fprintf(f,"ten: %s\nsdt: %s\ngmail: %s\n",fi[i].name,fi[i].sdt,fi[i].email);
+    for(int i=0;i<3;i++){
+        fprintf(gg,"ten: %s\nsdt: %s\ngmail: %s\n",fi[i].name,fi[i].sdt,fi[i].email);
     }
     for(int i=0;i<size;i++){
         Dequeue(s,&front,rear);
     }
     fclose(f);
+    fclose(gg);
 }
