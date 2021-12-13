@@ -67,9 +67,9 @@ int main(){
         if(dem2%3==2){
             fi[dem2/3].email[dem3]=x;
         }
+        dem3++;
     }
     y[dem1]='\0';
-    printf("%s",y);
     fclose(f);
     S[0].top=-1;
     S[0].kickthuoc=(dem2+1)/3;
