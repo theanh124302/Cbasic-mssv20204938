@@ -1,0 +1,17 @@
+ten: aten
+sdt: 
+asdt
+gmail: 
+agm
+ten: 
+bten
+sdt: 
+bsdt
+gmail: 
+bgm
+ten: 
+cten
+sdt: 
+csdt
+gmail: 
+cgm
