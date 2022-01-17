@@ -96,9 +96,8 @@ void merge(ds f[], int left, int mid, int right)
     int sizel = mid - left + 1;
     int sizer =  right - mid;
     ds L[sizel], R[sizer];
-    for (i = 0; i < sizel; i++){
+    for (i = 0; i < sizel; i++)
         L[i] = f[left + i];
-    }
     for (j = 0; j < sizer; j++)
         R[j] = f[mid + 1+ j];
     i = 0;
@@ -131,7 +130,7 @@ void merge(ds f[], int left, int mid, int right)
         k++;
     }
 }
-void mergeSort(int f[], int left, int right)
+void mergeSort(ds f[], int left, int right)
 {
     if (left < right)
     {
@@ -202,9 +201,9 @@ int main(){
     for(int i=0;i<size;i++){
         tach(&fi[i]);
     }
-    //quickSort(fi,0,size-1);
-    //mergeSort(fi,0,size-1);
-    //heapSort(fi,size);
+    quickSort(fi,0,size-1);
+    mergeSort(fi,0,size-1);
+    heapSort(fi,size);
     node head = NULL;
     for(int i=0;i<size;i++){
         head=them(head,fi[i].hoten,fi[i].sdt,fi[i].email);
